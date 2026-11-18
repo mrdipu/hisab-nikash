@@ -1,0 +1,310 @@
+# FIXED MASTER BUILD PROMPT — হিসাবনিকাশ (HisabNikash)
+## Native, Offline-First Android Personal Finance App
+## Developer / Brand: DZ Ai-STUDIO
+## Intended target: Google AI Studio → Build → Android (Kotlin + Jetpack Compose)
+
+ROLE
+You are a principal Android engineer, Kotlin/Jetpack Compose architect, Room/database specialist, fintech calculation engineer, mobile security reviewer, accessibility designer, and QA engineer. Act as an IMPLEMENTER inside the current Android project, not as a consultant producing mockups.
+
+PRIMARY OBJECTIVE
+Create a REAL, buildable, installable, single-activity, single-module Android application named exactly "হিসাবনিকাশ". It must manage personal income, expenses, accounts, transfers, budgets, savings goals, recurring transactions, analytics, local reports, and secure portable backups. Core features must work fully offline. The app must remain usable without login, Google Drive, Firebase, a Gemini key, cloud hosting, or subscriptions. Deliver functioning project files, not only screenshots, a UI prototype, a website, or a PWA.
+
+English internal name: HisabNikash
+Application ID: com.dzaistudio.hisabnikash
+Developer: DZ Ai-STUDIO
+English tagline: Your Money, Your Control
+Bangla tagline: আপনার টাকার হিসাব, আপনার নিয়ন্ত্রণ
+Currency in version 1: BDT (৳) ONLY
+Local default: Bangladesh; finance display timezone: Asia/Dhaka
+Supported interface languages: বাংলা and English
+Minimum Android SDK: 26; MUST run on Android 10 (API 29), particularly Samsung Galaxy M20-class devices.
+
+==================================================
+1. ABSOLUTE PLATFORM AND TRUTHFULNESS RULES
+==================================================
+1. In Google AI Studio, explicitly use the Android platform. Generate standard Kotlin, Jetpack Compose, Gradle Kotlin DSL, and Android resources. Do not silently switch to React, HTML, a website, WebView app, Capacitor, or PWA.
+2. The AI Studio Android builder is client-side and does not automatically configure web-only Google Workspace integrations or provide a server runtime. Do not assume built-in Drive access, automatic OAuth setup, a secret manager, or a backend.
+3. The browser emulator may not support Google Play services, including real Google Sign-In; do NOT simulate its success. Google Drive OAuth and hardware-specific capabilities require a physical compatible device and Google Cloud configuration.
+4. Keep the actual project buildable after each phase. Use only supported, stable, mutually compatible Android/Gradle/Kotlin/Compose dependencies. State the resolved versions in the deliverables; avoid inventing versions or saying "latest" without checking compatibility.
+5. Do not claim that code compiled, an APK was generated, a notification fired, or a backup succeeded without observing an actual result. Report "not verified" when it was not tested.
+6. If an external configuration, physical device, OAuth client, or missing asset blocks a feature, implement a truthful inactive state with instructions. Never show dummy balances, fake upload progress, fake backup history, fake account connections, or fabricated success timestamps.
+7. No paid infrastructure or unnecessary APIs. Core use must not require internet. Never request the user's Google password or include client secrets in the APK.
+8. Work in coherent development phases, preserving completed functionality. Resolve errors rather than replacing working code with stubs. Do not mark a feature complete unless its interactive path works with persisted data.
+
+==================================================
+2. BRANDING, OFFICIAL LOGO AND APP IDENTITY
+==================================================
+- The visible app title MUST be exactly হিসাবনিকাশ in BOTH language modes; never use MoneyMate or another app name.
+- Preserve developer attribution: "Developed by DZ Ai-STUDIO".
+- Official logo (when supplied as an IMAGE ASSET) is authoritative: two eyeglasses (blue and charcoal), red DZ, dark Ai-STUDIO, green upward chart, Bangla title, white background, blue/red/green accents.
+- Import the supplied original file as a drawable without altering its full-size presentation; preserve its aspect ratio on splash, welcome, Settings and About. Derive suitable adaptive/legacy launcher assets from the recognizable symbol without squashing detailed text.
+- CRITICAL ASSET CHECK: A textual description is NOT the actual logo file. If no usable image attachment is accessible, DO NOT pretend the original logo was imported or generate a fake "official" recreation. Use a clean text-based temporary app mark, record LOGO_ASSET_REQUIRED, and replace it once the genuine file is uploaded.
+- Use a tasteful premium fintech style. Brand colors: #123D34 primary green, #4DAF83 secondary green, #064AA0 blue, #E47769 accent red, #16875D income, #D95757 expense, #F7F9F6 light background, #101916 dark background, #FFFFFF light surfaces, #1D2924 dark surfaces.
+- Rounded cards 16–24dp, comfortable spacing, accessible contrast, one-handed navigation, dark mode, adaptive layouts, proper touch targets and high-quality empty states. Prioritize responsiveness over heavy animations.
+
+==================================================
+3. ANDROID TECH STACK AND PROJECT STRUCTURE
+==================================================
+Mandatory: Kotlin; Jetpack Compose + Material 3; single Activity; Navigation Compose; MVVM with ViewModels; repository pattern; Room SQLite; DAOs; Kotlin Coroutines + Flow/StateFlow; DataStore for preferences; WorkManager for deferrable recurring checks/backup; AndroidX Biometric where available; Android Storage Access Framework for import/export; Android Keystore where appropriate.
+
+Architecture:
+- data/local: entities, DAOs, database, type converters, migrations, seed data
+- data/repository: accounts, transactions, transfers, categories, budgets, savings, recurrence, reports, backups
+- domain: validated money calculations, use cases, recurrence policies, reporting, backup format and merge rules
+- ui: Compose screens/components, viewmodels, navigation, themes, localized resources
+- security: encryption, credential-free App Lock, safe file handling
+- cloud/drive: authorization and Drive REST v3 adapter, isolated from offline features
+- worker: scheduled recurrence and optional backup
+- tests: focused unit and database/instrumentation tests.
+
+Use Gradle Kotlin DSL and compatible dependencies. Keep user data in Room and UI preferences in DataStore. No Firebase database, no paid analytics, no ad SDK, no forced authentication. Use only necessary Android permissions; network permission is required ONLY for optional Drive functionality and must not block offline use. Prevent unintended Android OS cloud/device-transfer backup of plaintext financial databases: explicitly configure android:allowBackup and applicable backup/data-extraction exclusion rules, while preserving the app's own consent-based encrypted backup/export process.
+
+==================================================
+4. EXACT MONEY AND DATA MODEL RULES
+==================================================
+These rules take priority over visual design:
+A. Store all BDT amounts as signed Kotlin Long units of POISHA (100 poisha = ৳1). Never use Float/Double for monetary storage or totals. Parse inputs safely using integer/decimal-safe parsing (e.g. BigDecimal with exact scale checks) and convert to Long with overflow protection. Display amounts with currency-aware formatting; changing language must NEVER change their numeric value.
+B. Version 1 supports BDT only. Keep a currency field of "BDT" where needed, but do not offer unsupported multi-currency conversions.
+C. Every record uses immutable UUID IDs, UTC timestamps, proper updatedAt and optional deletedAt tombstones where needed. Convert to Asia/Dhaka for month/day reports unless the user changes the display timezone. Local month boundary calculations must handle daylight and date boundaries safely.
+D. Opening balances are NOT income. Income adds money, expense subtracts money, transfer subtracts from one account and adds to another, balance adjustment changes the account balance with an audited reason and explicit confirmation. A transfer is NEVER counted as new income or spending.
+E. Model transfers as one uniquely identified operation with source account, destination account, amount, timestamp and optional notes. Use one Room @Transaction atomic operation; reject source=destination, nonpositive amount and invalid account references. All affected screens update reactively.
+F. Current account balance is derived from opening balance plus valid income, minus valid expenses, plus incoming transfers, minus outgoing transfers, plus signed adjustments. Do not independently mutate a saved "currentBalance" field in ways that drift from the ledger. Total Balance is the sum of active + included accounts according to an explicit policy. Archived accounts remain in history and are not silently discarded.
+G. "Net Cash Flow" for a period = income - expenses; do not confuse it with savings-goal allocations or opening balances. If the UI says "Net Savings," explain that it means period income minus expenses, not money physically transferred into a savings account.
+H. Never silently delete finance history. Transaction delete uses confirmation and a soft-delete/tombstone strategy compatible with backup merging. Edits to transfers and adjustments must be atomic and leave a consistent ledger.
+I. Prevent orphaned IDs and broken foreign keys. Archive categories/accounts with history; do not cascade-delete users' transactions. Define migrations from the beginning; never use destructive migration in production.
+J. Use deterministic rounding, stable sort/filter results, safe SQL aggregation and efficient indexing for thousands of records.
+
+Suggested Room tables (adapt if a safer normalized schema is justified): AccountEntity, CategoryEntity, TransactionEntity, TransferEntity, BalanceAdjustmentEntity, BudgetEntity, SavingsGoalEntity, SavingsAllocationEntity, RecurringTemplateEntity, RecurringOccurrenceEntity, BackupMetadataEntity, AlertHistoryEntity, plus relevant preference models in DataStore. Add indices and foreign keys; schema versions and migrations must be included.
+
+==================================================
+5. ACCOUNTS, TRANSACTIONS AND CATEGORIES
+==================================================
+Default account types: Cash, Bank Account, bKash, Nagad, Rocket, Savings Account, Other Wallet. Allow user-created accounts, opening balance, notes, archived state and per-account history. Never access actual mobile wallet/bank services; these are manual tracking labels only.
+
+Transaction types: Income, Expense, Transfer, Balance Adjustment. Implement CRUD with confirmation for destructive actions, duplicate-as-new-ID, details, notes, merchant/payee, optional tags, payment method, optional receipt file reference (persist only URI when valid), created/updated timestamps, date/time and account/category. Validate every input. Filter/search by text, date range, amount, type, category and account; sort chronological or amount ascending/descending. Present daily, monthly and account histories.
+
+Seed localizable default income categories: Salary, Business Income, Freelancing, Bonus, Gifts, Investment Income, Rental Income, Other.
+Seed localizable default expense categories: Food & Restaurants, Groceries, Shopping, Transport, Housing/Rent, Electricity, Gas, Water, Internet, Mobile Recharge, Education, Health, Entertainment, Travel, Family, Personal Care, Other.
+
+Allow custom categories with icon/color, editing, archiving and historical retention. Store stable category identifiers and localized display names separately, so language switching does not duplicate seed categories. Analytics must include custom categories accurately.
+
+==================================================
+6. MONTHLY BUDGETS AND LOCAL ALERTS
+==================================================
+- Create/edit overall monthly budget and category-specific monthly budgets. Display actual spend, remaining allowance, percent used, overspend, previous month and copy-to-next-month action.
+- Default budget month uses Asia/Dhaka calendar month. Support a configurable budget start day 1–31; if a date does not exist in a month, clamp to the last calendar day consistently. Tests must cover the rule.
+- Spending for budgets = eligible EXPENSE records only, not transfers, balance adjustments, or earmarked savings allocations. Avoid counting category totals twice in overall totals.
+- Thresholds: 50%, 80%, 100%. Persist per-budget/per-period threshold history; notify only once per threshold crossing unless an explicit reset policy applies.
+- Notifications are LOCAL. Handle Android 13+ POST_NOTIFICATIONS permission at runtime only when needed; on older Android versions do not request a nonexistent runtime permission. Permission denial must not break app or budgeting. Create notification channels, configurable alert switches, and understandable copy in both languages.
+
+==================================================
+7. SAVINGS GOALS WITHOUT FALSE ACCOUNTING
+==================================================
+Provide goals: Emergency Fund, Phone, Laptop, Education, Travel, Home, Custom. Each goal: UUID, name, target amount, optional target date, progress, contributed/allocated total, remaining amount, status and history.
+
+IMPORTANT RULE: A savings contribution is an EARMARK/ALLOCATION of money ALREADY HELD in a selected account; it is NOT income, an expense, or newly created cash. Record allocation/release against a source account and goal. Account's real ledger balance is unchanged by earmarking; available-to-spend balance may be displayed separately as ledger balance minus currently earmarked funds. Prevent new allocations that exceed the unreserved available balance where that rule is enabled. Releasing a contribution releases the reserve without creating a financial transaction.
+
+If the user wants to move actual money into a Savings Account, perform an ordinary atomic account transfer, then optionally earmark funds from that destination account. Never debit or credit cash twice. Show "Saved/Reserved" separately from "Net Cash Flow". Add explanatory labels so users understand an allocation does not move money in the real world.
+
+==================================================
+8. RECURRING TRANSACTIONS
+==================================================
+Recurring salary, rent, utility bills, internet, subscriptions, installments and custom payments. Daily, weekly, monthly and yearly schedules; start date, optional end date, next due date, preferred time, enable/disable and reminder option.
+- Define monthly recurrence for dates 29–31 (clamp to the last valid day) and handle leap years deterministically.
+- Generate due transactions using an idempotency key such as (template UUID + scheduled occurrence date), stored with a database unique constraint. A retry or app restart must not duplicate entries.
+- WorkManager is best-effort, not an exact alarm. Reconcile missed occurrences when app resumes. Ask whether to auto-post due transactions or require confirmation, and default to safer confirmation for uncertain bills.
+- Handle clock/timezone changes, deletion and disabled templates safely. Do not create future expense transactions before their due/confirmed occurrence by accident.
+
+==================================================
+9. NAVIGATION AND FUNCTIONAL SCREENS
+==================================================
+Bottom navigation tabs: Home | Transactions | Budget | Analytics | Settings.
+Secondary screens accessible via appropriate navigation: Add/Edit Transaction, Account Management, Categories, Savings Goals, Recurring Transactions, Financial Reports, Manual Backup Export/Import, Google Account & Backup, Security, About. Maintain scroll/form state where reasonable, support system back, and give each operation a meaningful loading/error/empty/success state.
+
+HOME dashboard:
+- Official brand or properly labeled temporary brand placeholder, localized time-of-day greeting, local date and period label.
+- Hide/reveal sensitive monetary values (persist visibility preference), notification shortcut and quick actions.
+- Summary: total account balance, current period income, current period expenses, net cash flow.
+- Income-vs-expense chart, budget usage, available (unreserved) balance, savings goal progress, top expense category and recent real transactions.
+- Quick Add Expense, Quick Add Income, Transfer, Allocate to Savings Goal.
+- All metrics are live Flow-derived values from the Room database, never constants, mock demo arrays or placeholder numbers presented as real.
+
+TRANSACTIONS: paginated/efficient list where needed, search/filter/sort, detail, create/edit/delete/duplicate.
+BUDGET: overall/category budgets, thresholds, history and spending progress.
+ANALYTICS: trend charts and period selectors.
+SETTINGS: full functional settings and entry to other screens.
+
+==================================================
+10. ANALYTICS, REPORTS, CSV AND PDF
+==================================================
+Charts calculated from database (not dummy values): income vs expenses; monthly expense trends; spending by category; weekly spending; daily spending; goal allocation growth; budget vs actual; account balances. Filters: last 7 days, last 30 days, this month, last month, last 3 months, this year, custom date range. Transfer/adjustment records must be excluded from spending unless explicitly in an account-movement report. Handle empty data, custom categories, and time boundaries.
+
+Provide real monthly and annual reports with totals, net cash flow, leading expense category, budget comparison, account breakdown, category breakdown and transaction list.
+- Generate CSV and PDF on the DEVICE; no remote report service.
+- For CSV: use proper escaped fields, UTF-8 encoding and deterministic dates/amounts; neutralize spreadsheet-formula injection for user-controlled text fields.
+- For PDF: use Android-compatible text rendering and an appropriately licensed/available Bangla-capable font, verify conjuncts and numeric glyphs on-device; do not claim Bangla PDF works merely because the UI displays it. Fallback to a clear export error if a valid PDF cannot be generated.
+- Save with Storage Access Framework ACTION_CREATE_DOCUMENT / ACTION_OPEN_DOCUMENT; share with safe content URIs/Android Sharesheet. Do not request MANAGE_EXTERNAL_STORAGE or broad storage permissions.
+- Show file name, successful destination/URI and actual error messages; no fake export success.
+
+==================================================
+11. BILINGUAL LANGUAGE, ONBOARDING AND APPEARANCE
+==================================================
+Provide COMPLETE Bangla and English string resources: strings.xml and values-bn/strings.xml. Translate all screen labels, menus, dialogs, validation, errors, notification channels/content, accessibility descriptions, reports/settings labels, and onboarding. App title remains "হিসাবনিকাশ" in all locales. Locale follows device when supported, English fallback, user override persistent via DataStore/AppCompat locale APIs as appropriate. Properly render Bangla text and dates without clipping; accept Bangla/English numeral input carefully while money calculations remain unmodified.
+
+Theme: Light, Dark, System Default; persist preference.
+
+Splash: Android-compatible splash, correct icon/app title, proper tagline according to locale, quick transition; no artificial wait.
+First-run onboarding: exactly three concise pages: (1) income/expense overview, (2) budgets and analysis, (3) privacy/offline and optional backup. Skip/Next/Get Started work. Offer language, initial account, opening balance and optional first budget. Store completion flag in DataStore. NO login wall.
+
+SETTINGS:
+- Appearance; language; BDT currency info; date format; budget start day; default account;
+- budget alerts, recurring reminders and backup notifications;
+- account management, categories, savings goals, financial reports;
+- local import/export and destructive Clear All Data with strong confirmation;
+- optional App Lock and data/privacy explanation;
+- Drive connect/disconnect, Backup Now, Restore, optional Auto Backup, history and last verified successful time;
+- About: app, version, official logo if supplied, DZ Ai-STUDIO and privacy notice.
+
+==================================================
+12. LOCAL PRIVACY, LOCK AND CRYPTOGRAPHY
+==================================================
+- Room database resides in the app's private Android sandbox. Do NOT falsely describe it as encrypted-at-rest merely because it is private or protected by App Lock. If encrypted database storage is not explicitly implemented and tested, disclose this correctly.
+- Optional App Lock uses BiometricPrompt or supported device credentials with proper cancellation/recovery behavior. It must not block data backup or crash on unsupported phones.
+- Protect credentials/tokens and optional locally remembered encryption material with appropriate Android Keystore facilities. Never embed secrets, passphrases or refresh tokens in source code; never log financial data.
+- Backups use a documented, versioned binary envelope: format version, KDF identifier/parameters, random unique salt, fresh random 96-bit GCM nonce, authenticated metadata, encrypted payload and integrity information.
+- Prefer a mature supported KDF (e.g. PBKDF2WithHmacSHA256 using carefully chosen, sufficiently strong device-compatible iterations; Argon2id only if a maintained compatible library is available). Use AES-256-GCM and CSPRNG. Encryption must be based on a user-controlled BACKUP PASSPHRASE, not exclusively on a non-exportable Keystore key, so new-device recovery is possible.
+- Compress/serialize the validated snapshot BEFORE encryption if compression is enabled. Defend against oversized/corrupt inputs and resource exhaustion during import. Clean up plaintext temp files and zero sensitive memory where practical.
+- A lost backup passphrase cannot be magically recovered: explain this before the first encrypted export.
+
+==================================================
+13. MANUAL PORTABLE BACKUP AND SAFE RESTORE (BUILD THIS FIRST)
+==================================================
+Implement manual encrypted export/import fully OFFLINE before any Google Drive code. Back up ALL linked financial and user configuration data: accounts, transactions, transfers, adjustments, custom and default categories, budgets, goals, allocations, recurrence rules/occurrences, alert-related state where appropriate, preferences, deletions/tombstones and schema metadata.
+
+Export pipeline: consistent Room snapshot (read transaction) → canonical serialization with schema version and record counts → validate → encrypt with user passphrase → write via ACTION_CREATE_DOCUMENT → verify bytes written and report real completion. Ensure file export is portable to another compatible phone.
+
+Import pipeline: select file → verify header/version/size → request passphrase → authenticate/decrypt → validate types/UUIDs/references/record counts → preview affected record counts → choose Replace or Merge → explicit confirmation → database transaction apply → rollback on ANY failure → requery UI and report actual result.
+
+REPLACE: full, atomic replacement without partially deleting existing records. Consider a safety export before replace.
+MERGE: UUID-based deduplication, updatedAt/tombstone awareness; preserve referential integrity, show conflicts and allow explicit per-conflict or clear global resolution choice (keep local / use backup / skip). Never silently overwrite divergent records or resurrect deletions.
+
+Tests required: wrong password, tampered ciphertext, corrupted backup, older schema, duplicate merge, interrupted restore, referential failures, no-data case, and full export/import to a fresh local database.
+
+==================================================
+14. OPTIONAL REAL GOOGLE DRIVE BACKUP / RESTORE
+==================================================
+PRIORITY: core offline app and LOCAL encrypted backup must work BEFORE cloud integration.
+
+Cloud integration (if feasible in the Android project and after developer OAuth setup):
+- Use Google Identity Services / official Android authorization flow, using Credential Manager only as appropriate for selecting/signing into an account; Drive consent must be handled through the official authorization client and any required resolution UI. Never run OAuth in a self-made WebView.
+- Request only https://www.googleapis.com/auth/drive.appdata for app-owned hidden backup files, not full Drive scope. Use Drive REST API v3 from the device. For uploads set parents=["appDataFolder"]; for listing use spaces=appDataFolder; for download request file media. No fake local files described as remote.
+- Account connection and Drive authorization are separate states. If services, SHA-1/OAuth credentials or permissions are not set up, display an actionable "Setup Required" / "সেটআপ প্রয়োজন" state rather than a green Connected state.
+- Use the same portable encrypted backup envelope as manual backup. The backup passphrase is needed for restoration on a different device.
+- Back Up Now: snapshot → validate → encrypt → actual Drive upload → confirm successful response plus retrievable ID/metadata (and integrity check when feasible) → save success timestamp/Drive file ID. Keep three successful generations; prune only AFTER the newest generation has been verified. Do not delete the last known-good backup on failure.
+- Restore: list ACTUAL Drive backups, choose version, get passphrase, validate/decrypt, preview and confirm replace/merge using the same tested local restore pipeline.
+- Handle disconnected account, network loss, account mismatch, expired OAuth, revoked access, 403/404/429/5xx, quotas, canceled consent and missing Google Play services with safe actionable messages. Use cancellation/timeouts/backoff where appropriate.
+- Remember that appDataFolder is hidden from normal Drive UI and its data may be deleted when the user disconnects/removes app data; communicate this clearly. Manual export provides an independent recovery path.
+- Keep OAuth app identity, application ID and signing credentials stable across updates; new phone needs same Google account, compatible app OAuth configuration and correct backup passphrase.
+
+Required integration abstractions, IMPLEMENT where possible: GoogleAccountManager, GoogleAuthorizationManager, DriveBackupRepository, BackupEncryptionManager, BackupRestoreManager, AutomaticBackupWorker. Keep offline screens independent of these services.
+
+==================================================
+15. OPTIONAL AUTOMATIC BACKUP — NO UNATTENDED PASSWORD MAGIC
+==================================================
+Automatic encrypted Drive backups are OPT-IN, not on by default.
+
+A BACKGROUND WORKER CANNOT SHOW AN INTERACTIVE PASSPHRASE PROMPT. Therefore allow unattended backup only AFTER explicit user opt-in to a "remember backup key on this device" mode. Securely wrap a device-local derived backup key with Android Keystore and store only the protected material; explain that this local convenience key may not survive reinstall/device change and the independent user passphrase is still needed for recovery. NEVER save the plaintext passphrase.
+
+If this mode is disabled, key material unavailable, device locked in an incompatible way, or OAuth authorization requires UI: automatic backup MUST pause and request manual interaction; never upload unencrypted data or claim it ran.
+
+Use unique WorkManager work, network constraint, appropriate backoff, battery-aware best-effort roughly daily schedule, coalescing of changes, throttling, and actual success/error history. Avoid duplicate uploads for the same snapshot when possible. Android does not guarantee an exact execution time. This is BACKUP/RESTORE, not bidirectional real-time synchronization.
+
+==================================================
+16. GOOGLE CLOUD SETUP DOCUMENTATION
+==================================================
+Document the real developer-only steps, with exact menu names for the currently available Google console: create a Google Cloud project; enable Drive API; configure Google Auth Platform/consent/audience/test users and appdata scope; create Android OAuth credentials for package com.dzaistudio.hisabnikash; register the SHA-1 of the signing certificate ACTUALLY used (debug, Google AI Studio managed signing, or release, as applicable); add any other OAuth client type only if the chosen SDK really requires it; configure public client IDs safely; test scope grant and upload/download on a physical Google-Play-services device. Explain test-vs-production OAuth restrictions, reauthorization and signing key changes.
+
+Do not pretend that AI Studio auto-completes these configurations. If direct Drive integration cannot be verified inside AI Studio, leave clean, compiling integration interfaces and a clearly DISABLED Drive UI with a practical Android Studio ZIP export + setup guide. Never call a feature "complete" when its authorization or network behavior was not tested.
+
+==================================================
+17. PERFORMANCE AND ACCESSIBILITY
+==================================================
+- Optimize for Samsung Galaxy M20 / Android 10, modest CPU/RAM, and 2,000+ local transactions.
+- Use indexed SQL aggregation and Flow; avoid reading the full ledger on every recomposition. No blocking main thread for DB, encryption, PDF, CSV or network I/O.
+- Provide proper text size/scaling, screen reader descriptions, touch areas, RTL-safe layout where relevant, dark mode contrast and Bangla font fallback.
+- Handle app process death, restart, update, rotation and permission denial without losing committed data.
+- Do not add heavy charting libraries if lightweight Compose Canvas charts will suffice. Visual appeal must not reduce correctness or launch performance.
+
+==================================================
+18. AUTOMATED TESTS AND ACCEPTANCE SCENARIOS
+==================================================
+Implement meaningful JVM tests and Android Room/instrumentation tests where supported. At minimum verify:
+1. Exact BDT parsing and arithmetic including ৳0.01, invalid decimals and Long overflow.
+2. Income/expense/opening balance/adjustment account totals and aggregate balances.
+3. One atomic transfer of ৳500 from Cash to bKash: total across both accounts unchanged; income/expense unchanged.
+4. Goal allocation of ৳200: real total balance unchanged; unreserved spendable balance decreases by ৳200. Releasing restores availability.
+5. Budget category totals, boundaries, thresholds once per month and all budget start-day edge cases.
+6. Monthly recurrence on 31st, February leap years, resume after days offline, retry without duplicate ID.
+7. Category create/archive and historical analytics.
+8. Bangla/English switch, financial values unchanged and theme persisted.
+9. Local Room persistence after full process restart and safe migration.
+10. CSV escape/formula injection defense; report values and Unicode text on real device when needed.
+11. Backup encryption/decryption, wrong passphrase, tampering, rollback, schema compatibility, duplicate merge and conflict handling.
+12. Google authorization denial/network failure if cloud implemented (unit mocks don't count as real end-to-end cloud verification).
+13. Functional UI on API 29 and larger fonts; 2,000-transaction performance check.
+
+Make clear which tests were actually RUN, which passed, which failed, and which were not runnable in the environment. Fix compilation errors before advancing.
+
+==================================================
+19. EXECUTION PLAN (MANDATORY CHECKPOINTS)
+==================================================
+Perform phases serially; prioritize real working code over feature breadth. Do not wipe earlier work when adding features. At each checkpoint, inspect/build if a build facility is available; fix failures and verify real behavior before continuing. If execution context limits stop progress, preserve compilable files and report EXACTLY where to resume, rather than declaring all phases finished.
+
+PHASE 1 — Native shell: Android Gradle project, branding or honest temporary logo state, Android 10-compatible manifest, Compose Material 3 theme, localization, splash, onboarding, navigation, settings persistence. Ensure real project builds.
+PHASE 2 — Finance engine: schema, Room, migrations, repositories, exact money parser, accounts, categories, income/expense, transfers, adjustments, dashboard figures. Prove persistence and math through tests.
+PHASE 3 — Daily-use features: full transaction UX, budgets, savings allocation model, recurring scheduling, local notifications. Ensure all critical buttons/flows are functional.
+PHASE 4 — Insights and local portability: analytics, monthly/annual reports, CSV/PDF, encrypted local export/import, safe restore and tests. The OFFLINE APK must be usable and recoverable at this point.
+PHASE 5 — Optional cloud integration: account selection/authorization/Drive appdata REST v3, Drive history, genuine upload/restore; developer OAuth setup and physical-device verification. When unavailable, keep an honest Setup Required state.
+PHASE 6 — Opt-in auto backup, App Lock, final tests, error fixes, performance tuning, release readiness and physical Android 10 checks.
+
+IMPORTANT IMPLEMENTATION STRATEGY: Build the minimum complete offline vertical slice FIRST: open app → create account → add expense → see changed total → close/reopen app → see same total → export encrypted backup → restore to clean DB. Do not spend the entire generation budget making dozens of empty screens or charts.
+
+==================================================
+20. DELIVERABLES AND FINAL REPORT FORMAT
+==================================================
+Produce ACTUAL Android project files inside the working project:
+- AndroidManifest.xml, build.gradle.kts (root/app), settings.gradle.kts and required resources
+- Compose screens/viewmodels/navigation/theme in Kotlin
+- Room entities/DAOs/database/migrations/repositories, not fake in-memory data
+- Bilingual string resources, meaningful icons/branding and onboarding
+- functional transaction/account/transfer/budget/savings/recurring/analytics functionality
+- exportable CSV/PDF and portable encrypted local backup/restore
+- optional real Google Drive adapter or clearly declared setup-required integration
+- automated tests, developer README, OAuth instructions and Android 10 APK installation instructions.
+
+In the final status table, use the columns:
+FEATURE | IMPLEMENTED (YES/PARTIAL/NO) | ACTUALLY TESTED (YES/NO) | BLOCKER/NEXT STEP.
+
+Also report:
+A. Exact code files created or changed.
+B. Resolved build tool and dependency versions.
+C. Build command and actual outcome; link to APK ONLY if it actually exists.
+D. Actual test execution results and known defects.
+E. Whether LOGO_ASSET_REQUIRED is still pending.
+F. Developer OAuth configuration not yet completed and real-device verification required.
+G. Steps to download Android project ZIP and open in Android Studio, build a debug APK with Gradle if necessary, then sideload on an Android 10 device.
+H. For AI Studio "Install on Device" over WebUSB, use a compatible browser (Chrome or Edge), enable USB debugging, authorize the device and install the actual build. If not using that path, export ZIP and build in Android Studio. Do not imply Firefox supports WebUSB installation.
+I. Demonstrate one real end-to-end scenario with observed results; if testing is unavailable, say so.
+
+==================================================
+21. FINAL TASK TO EXECUTE NOW
+==================================================
+START IMPLEMENTING হিসাবনিকাশ IMMEDIATELY IN THE NATIVE ANDROID PROJECT.
+
+Follow the phases in order; spend effort on working Room persistence and correct accounting first, then premium polish and advanced features. Continue through subsequent phases as the environment permits, preserving a buildable app. Prefer a smaller complete feature over a superficially complete collection of nonfunctional screens. Never simulate Google OAuth/Drive success and never claim APK generation or testing without proof.
+
+The app must always be branded:
+হিসাবনিকাশ
+Developed by DZ Ai-STUDIO
+
+END OF MASTER PROMPT

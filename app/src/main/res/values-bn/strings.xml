@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">হিসাবনিকাশ</string>
+    <string name="app_subtitle_en">HisabNikash</string>
+    <string name="developed_by">Powered by DZ Ai-STUDIO</string>
+    <string name="powered_by">Powered by DZ Ai-STUDIO</string>
+    <string name="tagline">আপনার টাকার হিসাব, আপনার নিয়ন্ত্রণ</string>
+    <string name="about_description_title">অ্যাপ পরিচিতি</string>
+    <string name="app_description">আপনার আয়, ব্যয়, বাজেট, অ্যাকাউন্ট ও সঞ্চয়ের সম্পূর্ণ হিসাব রাখুন এক জায়গায়। অফলাইনেই নিরাপদে পরিচালনা করুন আপনার ব্যক্তিগত অর্থ—হিসাবনিকাশের মাধ্যমে। DZ Ai-STUDIO পরিচালিত «হিসাবনিকাশ» হলো বাংলাদেশের জন্য (BDT ৳) তৈরি সম্পূর্ণ অফলাইন, দ্বিভাষিক ব্যক্তিগত আর্থিক হিসাব ব্যবস্থাপক—যেখানে নগদ, ব্যাংক, বিকাশ, নগদ ও রকেটের নিখুঁত পয়সা-ভিত্তিক হিসাব, ট্রান্সফার, মাসিক বাজেট সতর্কতা, সঞ্চয় লক্ষ্য, নিয়মিত বিল, বাংলা PDF ও CSV প্রতিবেদন, বায়োমেট্রিক অ্যাপ লক এবং AES-256-GCM এনক্রিপ্টেড ব্যাকআপ সবই রয়েছে।</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">হোম</string>
+    <string name="nav_transactions">লেনদেন</string>
+    <string name="nav_budget">বাজেট</string>
+    <string name="nav_analytics">বিশ্লেষণ</string>
+    <string name="nav_settings">সেটিংস</string>
+
+    <!-- Common -->
+    <string name="save">সংরক্ষণ</string>
+    <string name="cancel">বাতিল</string>
+    <string name="delete">মুছুন</string>
+    <string name="edit">সম্পাদনা</string>
+    <string name="add">যোগ করুন</string>
+    <string name="confirm">নিশ্চিত করুন</string>
+    <string name="close">বন্ধ করুন</string>
+    <string name="back">ফিরে যান</string>
+    <string name="skip">এড়িয়ে যান</string>
+    <string name="next">পরবর্তী</string>
+    <string name="get_started">শুরু করুন</string>
+    <string name="archive">আর্কাইভ</string>
+    <string name="unarchive">আর্কাইভ থেকে ফিরিয়ে আনুন</string>
+    <string name="duplicate">ডুপ্লিকেট</string>
+    <string name="search">খুঁজুন</string>
+    <string name="filter">ফিল্টার</string>
+    <string name="sort">সাজান</string>
+    <string name="clear_filters">ফিল্টার মুছুন</string>
+    <string name="loading">লোড হচ্ছে…</string>
+    <string name="retry">আবার চেষ্টা করুন</string>
+    <string name="yes">হ্যাঁ</string>
+    <string name="no">না</string>
+    <string name="ok">ঠিক আছে</string>
+    <string name="amount_bdt">পরিমাণ (৳ টাকা)</string>
+    <string name="note_optional">নোট (ঐচ্ছিক)</string>
+    <string name="required_field">আবশ্যক</string>
+    <string name="currency_bdt_only">BDT (৳) — শুধুমাত্র বাংলাদেশী টাকা</string>
+    <string name="filter_all">সব</string>
+    <string name="all_accounts">সব অ্যাকাউন্ট</string>
+    <string name="none_selected">কোনোটিই নয়</string>
+    <string name="archived_badge">আর্কাইভকৃত</string>
+
+    <!-- Greetings -->
+    <string name="greeting_morning">সুপ্রভাত</string>
+    <string name="greeting_afternoon">শুভ অপরাহ্ণ</string>
+    <string name="greeting_evening">শুভ সন্ধ্যা</string>
+    <string name="greeting_night">শুভ রাত্রি</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">প্রতিটি টাকার নিখুঁত হিসাব রাখুন</string>
+    <string name="onboarding_desc_1">নগদ, ব্যাংক, বিকাশ, নগদ ও রকেটের দৈনিক আয়, ব্যয় এবং ট্রান্সফার নির্ভুলভাবে হিসাব রাখুন।</string>
+    <string name="onboarding_title_2">বাজেট ও সঞ্চয় লক্ষ্য</string>
+    <string name="onboarding_desc_2">মাসিক খরচের সীমা নির্ধারণ করুন, আসল ব্যালেন্স বিকৃত না করে সঞ্চয় বরাদ্দ করুন এবং গ্রাফ দেখুন।</string>
+    <string name="onboarding_title_3">সম্পূর্ণ অফলাইন ও এনক্রিপ্টেড ব্যাকআপ</string>
+    <string name="onboarding_desc_3">লগইন নেই, বিজ্ঞাপন নেই, কোনো ফি নেই। সব তথ্য আপনার ফোনেই থাকবে এবং পাসফ্রেজ দিয়ে নিরাপদ ব্যাকআপ নিতে পারবেন।</string>
+    <string name="onboarding_setup_title">প্রাথমিক সেটআপ</string>
+    <string name="onboarding_language_label">পছন্দের ভাষা</string>
+    <string name="onboarding_account_name">প্রথম অ্যাকাউন্টের নাম</string>
+    <string name="onboarding_account_type">অ্যাকাউন্টের ধরন</string>
+    <string name="onboarding_opening_balance">প্রারম্ভিক ব্যালেন্স (৳)</string>
+    <string name="onboarding_first_budget">ঐচ্ছিক মাসিক বাজেট (৳)</string>
+
+    <!-- Home Dashboard -->
+    <string name="total_balance">মোট ব্যালেন্স</string>
+    <string name="available_unreserved_balance">খরচের জন্য মুক্ত</string>
+    <string name="reserved_for_goals">লক্ষ্যে বরাদ্দকৃত</string>
+    <string name="period_income">আয়</string>
+    <string name="period_expense">ব্যয়</string>
+    <string name="net_cash_flow">নিট ক্যাশ ফ্লো</string>
+    <string name="net_cash_flow_explainer">নির্বাচিত সময়ের আয় বিয়োগ ব্যয় (প্রারম্ভিক ব্যালেন্স, ট্রান্সফার ও সঞ্চয় বরাদ্দ বাদে)</string>
+    <string name="toggle_visibility_desc">টাকার অঙ্ক লুকান বা দেখান</string>
+    <string name="alerts_shortcut_desc">বাজেট ও রিকারিং সতর্কতা দেখুন</string>
+    <string name="quick_add_expense">ব্যয়</string>
+    <string name="quick_add_income">আয়</string>
+    <string name="quick_transfer">ট্রান্সফার</string>
+    <string name="quick_allocate_goal">সঞ্চয়</string>
+    <string name="income_vs_expense_title">আয় বনাম ব্যয়</string>
+    <string name="budget_overview_title">বাজেট অবস্থা</string>
+    <string name="savings_progress_title">সঞ্চয় লক্ষ্য</string>
+    <string name="top_expense_category">সর্বোচ্চ ব্যয়ের খাত</string>
+    <string name="recent_transactions">সাম্প্রতিক লেনদেন</string>
+    <string name="see_all">সব দেখুন</string>
+    <string name="empty_home_title">হিসাব শুরু করুন</string>
+    <string name="empty_home_desc">লাইভ হিসাব দেখতে একটি অ্যাকাউন্ট খুলুন অথবা প্রথম আয় বা ব্যয় যোগ করুন।</string>
+    <string name="pending_recurring_banner">অপেক্ষমাণ রিকারিং লেনদেন নিশ্চিত করুন</string>
+    <string name="review_now">পর্যালোচনা</string>
+
+    <!-- Accounts -->
+    <string name="accounts_title">অ্যাকাউন্টসমূহ</string>
+    <string name="add_account">নতুন অ্যাকাউন্ট</string>
+    <string name="edit_account">অ্যাকাউন্ট সম্পাদনা</string>
+    <string name="account_name">অ্যাকাউন্টের নাম</string>
+    <string name="account_type">অ্যাকাউন্টের ধরন</string>
+    <string name="opening_balance">প্রারম্ভিক ব্যালেন্স (৳)</string>
+    <string name="include_in_total">মোট ব্যালেন্সে অন্তর্ভুক্ত করুন</string>
+    <string name="archived_accounts">আর্কাইভকৃত অ্যাকাউন্ট</string>
+    <string name="adjust_balance">ব্যালেন্স সমন্বয়</string>
+    <string name="adjustment_reason">সমন্বয়ের কারণ (আবশ্যক)</string>
+    <string name="adjustment_explainer">ব্যালেন্স সমন্বয় সরাসরি অ্যাকাউন্টের স্থিতি মিলিয়ে নেয় এবং এটি আয় বা ব্যয় হিসাবে গণ্য হয় না।</string>
+    <string name="current_ledger_balance">লেজার ব্যালেন্স</string>
+    <string name="type_cash">নগদ টাকা</string>
+    <string name="type_bank">ব্যাংক অ্যাকাউন্ট</string>
+    <string name="type_bkash">বিকাশ</string>
+    <string name="type_nagad">নগদ (Nagad)</string>
+    <string name="type_rocket">রকেট</string>
+    <string name="type_savings">সঞ্চয় অ্যাকাউন্ট</string>
+    <string name="type_other">অন্যান্য ওয়ালেট</string>
+    <string name="manual_tracking_notice">শুধুমাত্র ব্যক্তিগত হিসাব সংরক্ষণের জন্য — সরাসরি কোনো ব্যাংক বা এমএফএস সেবার সাথে যুক্ত নয়।</string>
+
+    <!-- Transactions & Transfers -->
+    <string name="transactions_title">লেনদেনসমূহ</string>
+    <string name="add_transaction">নতুন এন্ট্রি</string>
+    <string name="edit_transaction">এন্ট্রি সম্পাদনা</string>
+    <string name="transaction_details">লেনদেনের বিবরণ</string>
+    <string name="tx_type_income">আয়</string>
+    <string name="tx_type_expense">ব্যয়</string>
+    <string name="tx_type_transfer">ট্রান্সফার</string>
+    <string name="tx_type_adjustment">সমন্বয়</string>
+    <string name="select_account">অ্যাকাউন্ট</string>
+    <string name="from_account">যে অ্যাকাউন্ট থেকে</string>
+    <string name="to_account">যে অ্যাকাউন্টে</string>
+    <string name="select_category">ক্যাটাগরি</string>
+    <string name="merchant_payee">দোকান / প্রাপক</string>
+    <string name="tags_optional">ট্যাগ (কমা দিয়ে)</string>
+    <string name="payment_method">পেমেন্ট মাধ্যম</string>
+    <string name="attach_receipt">রসিদের ছবি সংযুক্ত করুন</string>
+    <string name="receipt_attached">রসিদ সংযুক্ত হয়েছে</string>
+    <string name="remove_receipt">রসিদ সরান</string>
+    <string name="adjustment_increase">+ ব্যালেন্স বাড়ান</string>
+    <string name="adjustment_decrease">- ব্যালেন্স কমান</string>
+    <string name="date_time">তারিখ ও সময়</string>
+    <string name="confirm_delete_tx">এন্ট্রিটি মুছে ফেলবেন?</string>
+    <string name="confirm_delete_tx_desc">লেজার ইতিহাস ও ব্যাকআপ মার্জের সামঞ্জস্য রাখতে এটি টম্বস্টোন পদ্ধতিতে মুছে ফেলা হবে।</string>
+    <string name="search_transactions_hint">নোট, দোকান বা ট্যাগ খুঁজুন…</string>
+    <string name="sort_newest">নতুন থেকে পুরাতন</string>
+    <string name="sort_oldest">পুরাতন থেকে নতুন</string>
+    <string name="sort_amount_high">সর্বোচ্চ পরিমাণ</string>
+    <string name="sort_amount_low">সর্বনিম্ন পরিমাণ</string>
+    <string name="empty_transactions">কোনো লেনদেন পাওয়া যায়নি।</string>
+
+    <!-- Categories -->
+    <string name="categories_title">ক্যাটাগরিসমূহ</string>
+    <string name="add_category">নতুন ক্যাটাগরি</string>
+    <string name="edit_category">ক্যাটাগরি সম্পাদনা</string>
+    <string name="category_name_en">নাম (ইংরেজি)</string>
+    <string name="category_name_bn">নাম (বাংলা)</string>
+    <string name="category_color">রং</string>
+    <string name="category_icon">আইকন</string>
+
+    <!-- Budget -->
+    <string name="budget_title">মাসিক বাজেট</string>
+    <string name="overall_budget">সামগ্রিক মাসিক বাজেট</string>
+    <string name="category_budgets">ক্যাটাগরি অনুযায়ী বাজেট</string>
+    <string name="set_budget">বাজেট সেট করুন</string>
+    <string name="edit_budget">বাজেট সম্পাদনা</string>
+    <string name="copy_prev_month">আগের মাস থেকে কপি</string>
+    <string name="copy_to_next_month">পরবর্তী মাসে কপি</string>
+    <string name="budget_spent">ব্যয় হয়েছে</string>
+    <string name="budget_remaining">অবশিষ্ট</string>
+    <string name="budget_overspent">অতিরিক্ত ব্যয়</string>
+    <string name="budget_period_label">সময়কাল</string>
+    <string name="budget_empty">এই সময়ের জন্য কোনো বাজেট সেট করা হয়নি।</string>
+    <string name="budget_alert_history">বাজেট সতর্কতার ইতিহাস</string>
+    <string name="budget_copied_count">%1$dটি বাজেট কপি হয়েছে।</string>
+    <string name="budget_copy_none">কপি করার মতো কোনো বাজেট পাওয়া যায়নি।</string>
+
+    <!-- Savings Goals -->
+    <string name="savings_goals_title">সঞ্চয় লক্ষ্য</string>
+    <string name="add_goal">নতুন সঞ্চয় লক্ষ্য</string>
+    <string name="goal_name">লক্ষ্যের নাম</string>
+    <string name="goal_target">লক্ষ্যমাত্রা (৳)</string>
+    <string name="goal_allocate">টাকা বরাদ্দ (ইয়ারমার্ক)</string>
+    <string name="goal_release">বরাদ্দ মুক্ত করুন</string>
+    <string name="goal_allocation_explainer">বরাদ্দ করলে অ্যাকাউন্টের আসল ব্যালেন্স পরিবর্তন না হয়ে শুধুমাত্র খরচের মুক্ত ব্যালেন্স থেকে টাকা আলাদা রাখা হয়।</string>
+    <string name="goal_saved_reserved">বরাদ্দকৃত</string>
+    <string name="goal_remaining">বাকি আছে</string>
+    <string name="goal_empty">এখনও কোনো সঞ্চয় লক্ষ্য নেই। জরুরি তহবিল বা নতুন লক্ষ্য যোগ করুন।</string>
+
+    <!-- Recurring Transactions -->
+    <string name="recurring_title">নিয়মিত (রিকারিং) লেনদেন</string>
+    <string name="add_recurring">নতুন নিয়মিত নিয়ম</string>
+    <string name="recurring_title_label">শিরোনাম</string>
+    <string name="recurring_frequency">পুনরাবৃত্তি</string>
+    <string name="freq_daily">দৈনিক</string>
+    <string name="freq_weekly">সাপ্তাহিক</string>
+    <string name="freq_monthly">মাসিক</string>
+    <string name="freq_yearly">বার্ষিক</string>
+    <string name="recurring_auto_post">নির্ধারিত দিনে স্বয়ংক্রিয়ভাবে যোগ করুন (নয়তো নিশ্চিতকরণ চাইবে)</string>
+    <string name="recurring_reminder">স্থানীয় রিমাইন্ডার দেখান</string>
+    <string name="recurring_post_now">যোগ করুন</string>
+    <string name="recurring_skip_occurrence">এড়িয়ে যান</string>
+    <string name="recurring_next_due">পরবর্তী</string>
+    <string name="recurring_empty">কোনো নিয়মিত লেনদেনের নিয়ম নেই।</string>
+
+    <!-- Analytics & Reports -->
+    <string name="analytics_title">বিশ্লেষণ</string>
+    <string name="reports_title">আর্থিক প্রতিবেদন</string>
+    <string name="filter_7d">গত ৭ দিন</string>
+    <string name="filter_30d">গত ৩০ দিন</string>
+    <string name="filter_this_month">এই মাস</string>
+    <string name="filter_last_month">গত মাস</string>
+    <string name="filter_3m">গত ৩ মাস</string>
+    <string name="filter_this_year">এই বছর</string>
+    <string name="filter_custom">নিজস্ব তারিখ</string>
+    <string name="spending_by_category">খাত অনুযায়ী ব্যয়</string>
+    <string name="monthly_trends">মাসিক প্রবণতা</string>
+    <string name="daily_spending">দৈনিক ব্যয়</string>
+    <string name="export_csv">CSV রপ্তানি</string>
+    <string name="export_pdf">PDF প্রতিবেদন রপ্তানি</string>
+    <string name="share_report">প্রতিবেদন শেয়ার করুন</string>
+    <string name="report_period_monthly">মাসিক প্রতিবেদন</string>
+    <string name="report_period_annual">বার্ষিক প্রতিবেদন</string>
+
+    <!-- Settings -->
+    <string name="settings_title">সেটিংস</string>
+    <string name="section_preferences">পছন্দসমূহ</string>
+    <string name="section_finance">হিসাব ও টুলস</string>
+    <string name="section_backup_security">ব্যাকআপ ও নিরাপত্তা</string>
+    <string name="section_cloud">ঐচ্ছিক ক্লাউড ব্যাকআপ</string>
+    <string name="section_info">তথ্য</string>
+    <string name="pref_theme">থিম</string>
+    <string name="theme_system">সিস্টেম ডিফল্ট</string>
+    <string name="theme_light">লাইট</string>
+    <string name="theme_dark">ডার্ক</string>
+    <string name="pref_language">ভাষা</string>
+    <string name="lang_english">English</string>
+    <string name="lang_bangla">বাংলা</string>
+    <string name="pref_date_format">তারিখের ফরম্যাট</string>
+    <string name="pref_budget_start_day">বাজেট মাসের শুরুর দিন (১–৩১)</string>
+    <string name="pref_default_account">ডিফল্ট অ্যাকাউন্ট</string>
+    <string name="pref_budget_alerts">বাজেট সীমা সতর্কতা (৫০/৮০/১০০%)</string>
+    <string name="pref_recurring_reminders">নিয়মিত বিলের রিমাইন্ডার</string>
+    <string name="pref_backup_notifications">ব্যাকআপ স্ট্যাটাস নোটিফিকেশন</string>
+
+    <!-- Security & Backup -->
+    <string name="security_title">নিরাপত্তা ও গোপনীয়তা</string>
+    <string name="app_lock_toggle">অ্যাপ লক (বায়োমেট্রিক / ডিভাইস পিন)</string>
+    <string name="app_lock_prompt_title">হিসাবনিকাশ আনলক করুন</string>
+    <string name="app_lock_prompt_subtitle">আপনার ব্যক্তিগত হিসাব দেখতে পরিচয় যাচাই করুন</string>
+    <string name="unlock_button">আনলক করুন</string>
+    <string name="app_lock_unavailable">এই ডিভাইসে বায়োমেট্রিক বা স্ক্রিন-লক পিন/প্যাটার্ন সেট করা নেই অথবা সমর্থিত নয়।</string>
+    <string name="privacy_disclosure_title">সৎ স্টোরেজ ও গোপনীয়তা তথ্য</string>
+    <string name="privacy_disclosure_body">আপনার Room SQLite ডাটাবেজ অ্যান্ড্রয়েডের ব্যক্তিগত অ্যাপ স্যান্ডবক্সে সংরক্ষিত থাকে (এবং OS ক্লাউড ব্যাকআপ বন্ধ রাখা হয়েছে)। Room ডাটাবেজ নিজে SQLCipher দিয়ে এনক্রিপ্টেড নয়; অ্যাপ লক UI প্রবেশাধিকার সুরক্ষিত রাখে এবং ম্যানুয়াল/ড্রাইভ ব্যাকআপ আপনার পাসফ্রেজ ব্যবহার করে AES-256-GCM + PBKDF2WithHmacSHA256 দিয়ে শক্তিশালীভাবে এনক্রিপ্ট করা হয়।</string>
+
+    <string name="manual_backup_title">ম্যানুয়াল এনক্রিপ্টেড ব্যাকআপ</string>
+    <string name="export_backup">এনক্রিপ্টেড ব্যাকআপ রপ্তানি (.hnkb)</string>
+    <string name="import_backup">ব্যাকআপ ফাইল থেকে পুনরুদ্ধার</string>
+    <string name="backup_passphrase">ব্যাকআপ পাসফ্রেজ</string>
+    <string name="backup_passphrase_confirm">পাসফ্রেজ নিশ্চিত করুন</string>
+    <string name="passphrase_warning">সতর্কতা: হারিয়ে যাওয়া পাসফ্রেজ কোনোভাবেই উদ্ধার করা সম্ভব নয়। পাসফ্রেজ ছাড়া কোনো ফোনেই ব্যাকআপ ডিক্রিপ্ট করা যাবে না।</string>
+    <string name="restore_mode_replace">সব তথ্য প্রতিস্থাপন করুন</string>
+    <string name="restore_mode_merge">স্মার্ট মার্জ (UUID ও সময় অনুযায়ী)</string>
+    <string name="conflict_resolution_label">দ্বন্দ্ব (Conflict) দেখা দিলে</string>
+    <string name="conflict_keep_local">ফোনের তথ্য রাখুন</string>
+    <string name="conflict_use_backup">ব্যাকআপের তথ্য ব্যবহার করুন</string>
+    <string name="conflict_skip">দ্বন্দ্বপূর্ণগুলো এড়িয়ে যান</string>
+    <string name="clear_all_data">সব তথ্য মুছে ফেলুন</string>
+    <string name="clear_all_confirm">সব অ্যাকাউন্ট, লেনদেন, বাজেট, সঞ্চয় লক্ষ্য এবং নিয়ম স্থায়ীভাবে মুছে ফেলবেন? প্রয়োজনে আগে একটি এনক্রিপ্টেড ব্যাকআপ নিয়ে রাখুন।</string>
+    <string name="clear_all_type_confirm">নিশ্চিত করতে DELETE লিখুন</string>
+
+    <!-- Google Drive Backup -->
+    <string name="drive_backup_title">গুগল অ্যাকাউন্ট ও ড্রাইভ ব্যাকআপ</string>
+    <string name="drive_authorized_title">গুগল ড্রাইভ যুক্ত হয়েছে (Hisab Nikash Backups)</string>
+    <string name="drive_not_connected_title">গুগল ড্রাইভ যুক্ত নয়</string>
+    <string name="drive_not_connected_desc">ঐচ্ছিক ক্লাউড ব্যাকআপ আপনার Google Drive-এর দৃশ্যমান \"Hisab Nikash Backups\" ফোল্ডারে এনক্রিপ্টেড .hnkb ফাইল সংরক্ষণ করে। অনুমোদন দিতে নিচের বোতামে ট্যাপ করুন।</string>
+    <string name="drive_play_services_unavailable">Google Play Services পাওয়া যায়নি</string>
+    <string name="drive_consent_cancelled_title">গুগল ড্রাইভ অনুমোদন বাতিল হয়েছে</string>
+    <string name="drive_consent_cancelled_desc">গুগল ড্রাইভের অনুমতি বাতিল হয়েছে বা সম্পন্ন করা যায়নি। ডিভাইসে একটি Google অ্যাকাউন্ট লগইন আছে কিনা, ইন্টারনেট চালু আছে কিনা এবং Google Cloud Console-এ %1$s-এর জন্য Android OAuth 2.0 Client ID ও সাইনিং SHA-1 কনফিগার করা আছে কিনা যাচাই করুন। চাইলে ম্যানুয়াল এনক্রিপ্টেড ব্যাকআপ (.hnkb) সম্পূর্ণ অফলাইনে ব্যবহার করতে পারেন।</string>
+    <string name="drive_setup_required_title">OAuth সেটআপ প্রয়োজন</string>
+    <string name="drive_unregistered_summary">এই অ্যাপ বিল্ডটি এখনো Google Cloud Console-এ Google Drive OAuth-এর জন্য নিবন্ধিত নয়। নিচের Package Name ও Signing SHA-1 দিয়ে একটি Android OAuth 2.0 Client ID তৈরি করুন, Google Drive API চালু করুন এবং OAuth Consent Screen-এর Test Users তালিকায় আপনার Google অ্যাকাউন্ট যোগ করুন।</string>
+    <string name="drive_package_name_label">প্যাকেজ নাম (Package Name)</string>
+    <string name="drive_sha1_label">সাইনিং SHA-1</string>
+    <string name="drive_copy_oauth_details">প্যাকেজ ও SHA-1 কপি করুন</string>
+    <string name="drive_copied_oauth_details">প্যাকেজ নাম ও SHA-1 কপি করা হয়েছে</string>
+    <string name="drive_offline_fallback_hint">টিপস: Google Cloud Console সেটআপ ছাড়াই ম্যানুয়াল এনক্রিপ্টেড ব্যাকআপ (.hnkb) সম্পূর্ণ অফলাইনে এখনই ব্যবহার করা যাবে।</string>
+    <string name="drive_setup_required_desc">Google Drive ব্যাকআপের মাধ্যমে \"Hisab Nikash Backups\" ফোল্ডারে ব্যাকআপ সংরক্ষণের জন্য Google Cloud Console-এ Android OAuth 2.0 Client ID ও সাইনিং SHA-1 কনফিগারেশন এবং Play Services যুক্ত ডিভাইস প্রয়োজন।</string>
+    <string name="drive_auto_backup_toggle">স্বয়ংক্রিয় দৈনিক এনক্রিপ্টেড ড্রাইভ ব্যাকআপ</string>
+    <string name="drive_remember_key_toggle">এই ডিভাইসে ব্যাকআপ কী মনে রাখুন</string>
+    <string name="drive_remember_key_warning">Android Keystore-সুরক্ষিত কী ব্যবহার করে ব্যাকগ্রাউন্ড WorkManager ব্যাকআপ চালু করে। অ্যাপ আনইনস্টল বা নতুন ফোনে রিস্টোর করতে অবশ্যই মূল পাসফ্রেজ প্রয়োজন হবে।</string>
+    <string name="drive_backup_now">এখনই ড্রাইভে ব্যাকআপ করুন</string>
+    <string name="drive_restore">ড্রাইভ থেকে পুনরুদ্ধার</string>
+    <string name="drive_connect">গুগল ড্রাইভ অনুমোদন করুন</string>
+    <string name="drive_retry_connect">আবার অনুমোদন চেষ্টা করুন</string>
+    <string name="drive_disconnect">অ্যাকাউন্ট বিচ্ছিন্ন করুন</string>
+    <string name="drive_remote_backups_title">ড্রাইভে সংরক্ষিত ব্যাকআপ (Hisab Nikash Backups)</string>
+
+    <!-- About -->
+    <string name="about_title">হিসাবনিকাশ সম্পর্কে</string>
+
+    <!-- Notifications -->
+    <string name="channel_budget_name">বাজেট সতর্কতা</string>
+    <string name="channel_budget_desc">মাসিক বাজেটের ৫০%, ৮০% বা ১০০% স্পর্শ করলে সতর্কতা</string>
+    <string name="channel_recurring_name">নিয়মিত লেনদেন রিমাইন্ডার</string>
+    <string name="channel_recurring_desc">নির্ধারিত নিয়মিত আয় বা বিলের রিমাইন্ডার</string>
+    <string name="channel_backup_name">ব্যাকআপ স্ট্যাটাস</string>
+    <string name="channel_backup_desc">এনক্রিপ্টেড ব্যাকআপ সম্পন্ন বা ত্রুটির বিজ্ঞপ্তি</string>
+
+    <!-- Errors -->
+    <string name="err_invalid_amount">সঠিক টাকার পরিমাণ লিখুন (সর্বোচ্চ ২ দশমিক ঘর)</string>
+    <string name="err_same_account">উৎস এবং গন্তব্য অ্যাকাউন্ট ভিন্ন হতে হবে</string>
+    <string name="err_insufficient_unreserved">অ্যাকাউন্টের মুক্ত ব্যালেন্সের চেয়ে বেশি পরিমাণ বরাদ্দ করা যাবে না</string>
+    <string name="err_passphrase_short">পাসফ্রেজ কমপক্ষে ৮ অক্ষরের হতে হবে</string>
+    <string name="err_passphrase_mismatch">পাসফ্রেজ দুটি মিলছে না</string>
+</resources>

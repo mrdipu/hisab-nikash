@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">হিসাবনিকাশ</string>
+    <string name="app_subtitle_en">HisabNikash</string>
+    <string name="developed_by">Powered by DZ Ai-STUDIO</string>
+    <string name="powered_by">Powered by DZ Ai-STUDIO</string>
+    <string name="tagline">Your Money, Your Control</string>
+    <string name="about_description_title">About This App</string>
+    <string name="app_description">Keep a complete record of your income, expenses, budgets, accounts, and savings in one place. Manage your personal finances safely offline with হিসাবনিকাশ (HisabNikash), powered by DZ Ai-STUDIO. Tailored for Bangladesh (BDT ৳) with Cash, Bank, bKash, Nagad, and Rocket accounts, exact poisha math, atomic transfers, monthly budget threshold alerts, earmarked savings goals, recurring bill rules, UTF-8 CSV and Bangla PDF reports, biometric app lock, and AES-256-GCM encrypted backups.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_transactions">Transactions</string>
+    <string name="nav_budget">Budget</string>
+    <string name="nav_analytics">Analytics</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Common -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+    <string name="confirm">Confirm</string>
+    <string name="close">Close</string>
+    <string name="back">Back</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="archive">Archive</string>
+    <string name="unarchive">Restore from Archive</string>
+    <string name="duplicate">Duplicate</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="clear_filters">Clear Filters</string>
+    <string name="loading">Loading…</string>
+    <string name="retry">Retry</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="amount_bdt">Amount (৳ BDT)</string>
+    <string name="note_optional">Note (optional)</string>
+    <string name="required_field">Required</string>
+    <string name="currency_bdt_only">BDT (৳) — Bangladesh Taka only</string>
+    <string name="filter_all">All</string>
+    <string name="all_accounts">All Accounts</string>
+    <string name="none_selected">None</string>
+    <string name="archived_badge">Archived</string>
+
+    <!-- Greetings -->
+    <string name="greeting_morning">Good Morning</string>
+    <string name="greeting_afternoon">Good Afternoon</string>
+    <string name="greeting_evening">Good Evening</string>
+    <string name="greeting_night">Good Night</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Track Every Taka Effortlessly</string>
+    <string name="onboarding_desc_1">Record daily income, expenses, transfers across Cash, Bank, bKash, Nagad, and Rocket in seconds using exact BDT accounting.</string>
+    <string name="onboarding_title_2">Smart Budgets &amp; Savings Goals</string>
+    <string name="onboarding_desc_2">Set monthly spending limits, earmark savings without distorting real balances, and explore rich visual insights.</string>
+    <string name="onboarding_title_3">100% Offline &amp; Encrypted Backups</string>
+    <string name="onboarding_desc_3">No login, no cloud lock-in, no ads. Your ledger stays on your device, with passphrase-encrypted backups whenever you choose.</string>
+    <string name="onboarding_setup_title">Quick Initial Setup</string>
+    <string name="onboarding_language_label">Preferred Language</string>
+    <string name="onboarding_account_name">First Account Name</string>
+    <string name="onboarding_account_type">Account Type</string>
+    <string name="onboarding_opening_balance">Opening Balance (৳)</string>
+    <string name="onboarding_first_budget">Optional Monthly Budget (৳)</string>
+
+    <!-- Home Dashboard -->
+    <string name="total_balance">Total Balance</string>
+    <string name="available_unreserved_balance">Available (Unreserved)</string>
+    <string name="reserved_for_goals">Earmarked for Goals</string>
+    <string name="period_income">Income</string>
+    <string name="period_expense">Expenses</string>
+    <string name="net_cash_flow">Net Cash Flow</string>
+    <string name="net_cash_flow_explainer">Period income minus expenses (excludes opening balances, transfers &amp; goal allocations)</string>
+    <string name="toggle_visibility_desc">Toggle balance visibility</string>
+    <string name="alerts_shortcut_desc">View budget and recurring alerts</string>
+    <string name="quick_add_expense">Expense</string>
+    <string name="quick_add_income">Income</string>
+    <string name="quick_transfer">Transfer</string>
+    <string name="quick_allocate_goal">Goal</string>
+    <string name="income_vs_expense_title">Income vs Expenses</string>
+    <string name="budget_overview_title">Budget Overview</string>
+    <string name="savings_progress_title">Savings Goals</string>
+    <string name="top_expense_category">Top Expense Category</string>
+    <string name="recent_transactions">Recent Activity</string>
+    <string name="see_all">See All</string>
+    <string name="empty_home_title">Start Your Ledger</string>
+    <string name="empty_home_desc">Create an account or record your first income or expense to see live cash flow.</string>
+    <string name="pending_recurring_banner">Pending recurring items need confirmation</string>
+    <string name="review_now">Review</string>
+
+    <!-- Accounts -->
+    <string name="accounts_title">Accounts</string>
+    <string name="add_account">Add Account</string>
+    <string name="edit_account">Edit Account</string>
+    <string name="account_name">Account Name</string>
+    <string name="account_type">Account Type</string>
+    <string name="opening_balance">Opening Balance (৳)</string>
+    <string name="include_in_total">Include in Total Balance</string>
+    <string name="archived_accounts">Archived Accounts</string>
+    <string name="adjust_balance">Balance Adjustment</string>
+    <string name="adjustment_reason">Audit Reason (required)</string>
+    <string name="adjustment_explainer">Balance adjustments directly reconcile an account balance with an audit note and are excluded from income/expense totals.</string>
+    <string name="current_ledger_balance">Ledger Balance</string>
+    <string name="type_cash">Cash</string>
+    <string name="type_bank">Bank Account</string>
+    <string name="type_bkash">bKash</string>
+    <string name="type_nagad">Nagad</string>
+    <string name="type_rocket">Rocket</string>
+    <string name="type_savings">Savings Account</string>
+    <string name="type_other">Other Wallet</string>
+    <string name="manual_tracking_notice">Manual ledger tracking only — never connects to external bank/MFS APIs.</string>
+
+    <!-- Transactions & Transfers -->
+    <string name="transactions_title">Transactions</string>
+    <string name="add_transaction">Add Entry</string>
+    <string name="edit_transaction">Edit Entry</string>
+    <string name="transaction_details">Entry Details</string>
+    <string name="tx_type_income">Income</string>
+    <string name="tx_type_expense">Expense</string>
+    <string name="tx_type_transfer">Transfer</string>
+    <string name="tx_type_adjustment">Adjustment</string>
+    <string name="select_account">Account</string>
+    <string name="from_account">From Account</string>
+    <string name="to_account">To Account</string>
+    <string name="select_category">Category</string>
+    <string name="merchant_payee">Merchant / Payee</string>
+    <string name="tags_optional">Tags (comma separated)</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="attach_receipt">Attach Receipt Image</string>
+    <string name="receipt_attached">Receipt Attached</string>
+    <string name="remove_receipt">Remove Receipt</string>
+    <string name="adjustment_increase">+ Increase Balance</string>
+    <string name="adjustment_decrease">- Decrease Balance</string>
+    <string name="date_time">Date &amp; Time</string>
+    <string name="confirm_delete_tx">Delete this entry?</string>
+    <string name="confirm_delete_tx_desc">This record will be soft-deleted (tombstoned) so ledger history and backup merges stay consistent.</string>
+    <string name="search_transactions_hint">Search note, merchant, tag…</string>
+    <string name="sort_newest">Newest First</string>
+    <string name="sort_oldest">Oldest First</string>
+    <string name="sort_amount_high">Highest Amount</string>
+    <string name="sort_amount_low">Lowest Amount</string>
+    <string name="empty_transactions">No matching records found.</string>
+
+    <!-- Categories -->
+    <string name="categories_title">Categories</string>
+    <string name="add_category">Add Category</string>
+    <string name="edit_category">Edit Category</string>
+    <string name="category_name_en">Name (English)</string>
+    <string name="category_name_bn">Name (Bangla)</string>
+    <string name="category_color">Color</string>
+    <string name="category_icon">Icon</string>
+
+    <!-- Budget -->
+    <string name="budget_title">Monthly Budget</string>
+    <string name="overall_budget">Overall Monthly Budget</string>
+    <string name="category_budgets">Category Budgets</string>
+    <string name="set_budget">Set Budget</string>
+    <string name="edit_budget">Edit Budget</string>
+    <string name="copy_prev_month">Copy from Previous Month</string>
+    <string name="copy_to_next_month">Copy to Next Month</string>
+    <string name="budget_spent">Spent</string>
+    <string name="budget_remaining">Remaining</string>
+    <string name="budget_overspent">Overspent by</string>
+    <string name="budget_period_label">Period</string>
+    <string name="budget_empty">No budget set for this period yet.</string>
+    <string name="budget_alert_history">Threshold Alert History</string>
+    <string name="budget_copied_count">Copied %1$d budget(s).</string>
+    <string name="budget_copy_none">No budgets found in source period to copy.</string>
+
+    <!-- Savings Goals -->
+    <string name="savings_goals_title">Savings Goals</string>
+    <string name="add_goal">New Savings Goal</string>
+    <string name="goal_name">Goal Name</string>
+    <string name="goal_target">Target Amount (৳)</string>
+    <string name="goal_allocate">Allocate / Earmark</string>
+    <string name="goal_release">Release Reserve</string>
+    <string name="goal_allocation_explainer">Earmarking reserves money already inside an account without changing its real balance or creating fake income/expense.</string>
+    <string name="goal_saved_reserved">Reserved</string>
+    <string name="goal_remaining">To Target</string>
+    <string name="goal_empty">No savings goals yet. Create an Emergency Fund or target goal.</string>
+
+    <!-- Recurring Transactions -->
+    <string name="recurring_title">Recurring Transactions</string>
+    <string name="add_recurring">New Recurring Rule</string>
+    <string name="recurring_title_label">Rule Title</string>
+    <string name="recurring_frequency">Frequency</string>
+    <string name="freq_daily">Daily</string>
+    <string name="freq_weekly">Weekly</string>
+    <string name="freq_monthly">Monthly</string>
+    <string name="freq_yearly">Yearly</string>
+    <string name="recurring_auto_post">Auto-post when due (otherwise ask confirmation)</string>
+    <string name="recurring_reminder">Show local reminder</string>
+    <string name="recurring_post_now">Post Entry</string>
+    <string name="recurring_skip_occurrence">Skip</string>
+    <string name="recurring_next_due">Next</string>
+    <string name="recurring_empty">No recurring rules configured yet.</string>
+
+    <!-- Analytics & Reports -->
+    <string name="analytics_title">Analytics</string>
+    <string name="reports_title">Financial Reports</string>
+    <string name="filter_7d">Last 7 Days</string>
+    <string name="filter_30d">Last 30 Days</string>
+    <string name="filter_this_month">This Month</string>
+    <string name="filter_last_month">Last Month</string>
+    <string name="filter_3m">Last 3 Months</string>
+    <string name="filter_this_year">This Year</string>
+    <string name="filter_custom">Custom Range</string>
+    <string name="spending_by_category">Spending by Category</string>
+    <string name="monthly_trends">Monthly Trends</string>
+    <string name="daily_spending">Daily Spending</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="export_pdf">Export PDF Report</string>
+    <string name="share_report">Share Report</string>
+    <string name="report_period_monthly">Monthly Report</string>
+    <string name="report_period_annual">Annual Report</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="section_preferences">Preferences</string>
+    <string name="section_finance">Finance &amp; Tools</string>
+    <string name="section_backup_security">Backup &amp; Security</string>
+    <string name="section_cloud">Optional Cloud Backup</string>
+    <string name="section_info">Information</string>
+    <string name="pref_theme">Appearance</string>
+    <string name="theme_system">System Default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="pref_language">Language</string>
+    <string name="lang_english">English</string>
+    <string name="lang_bangla">বাংলা</string>
+    <string name="pref_date_format">Date Format</string>
+    <string name="pref_budget_start_day">Budget Month Start Day (1–31)</string>
+    <string name="pref_default_account">Default Account</string>
+    <string name="pref_budget_alerts">Budget Threshold Alerts (50/80/100%)</string>
+    <string name="pref_recurring_reminders">Recurring Bill Reminders</string>
+    <string name="pref_backup_notifications">Backup Status Notifications</string>
+
+    <!-- Security & Backup -->
+    <string name="security_title">Security &amp; Privacy</string>
+    <string name="app_lock_toggle">App Lock (Biometric / Device PIN)</string>
+    <string name="app_lock_prompt_title">Unlock হিসাবনিকাশ</string>
+    <string name="app_lock_prompt_subtitle">Verify your identity to access your local ledger</string>
+    <string name="unlock_button">Unlock</string>
+    <string name="app_lock_unavailable">Device biometric or screen-lock PIN/pattern is not enrolled or unsupported on this device.</string>
+    <string name="privacy_disclosure_title">Honest Storage &amp; Privacy Notice</string>
+    <string name="privacy_disclosure_body">Your Room SQLite database lives inside Android\'s private app sandbox (with OS cloud backup disabled). Room SQLite itself is NOT encrypted-at-rest with SQLCipher; enabling App Lock protects UI access, while manual/Drive backups are strongly encrypted using AES-256-GCM + PBKDF2WithHmacSHA256 with your passphrase.</string>
+
+    <string name="manual_backup_title">Manual Encrypted Backup</string>
+    <string name="export_backup">Export Encrypted Backup (.hnkb)</string>
+    <string name="import_backup">Restore from Backup File</string>
+    <string name="backup_passphrase">Backup Passphrase</string>
+    <string name="backup_passphrase_confirm">Confirm Passphrase</string>
+    <string name="passphrase_warning">Important: Lost passphrases cannot be recovered. Keep your passphrase in a safe place—without it, encrypted backups cannot be decrypted on any phone.</string>
+    <string name="restore_mode_replace">Replace All Data</string>
+    <string name="restore_mode_merge">Smart Merge (UUID &amp; Timestamp)</string>
+    <string name="conflict_resolution_label">When records conflict</string>
+    <string name="conflict_keep_local">Keep Local</string>
+    <string name="conflict_use_backup">Use Backup</string>
+    <string name="conflict_skip">Skip Conflicting</string>
+    <string name="clear_all_data">Clear All Data</string>
+    <string name="clear_all_confirm">Permanently erase all local accounts, transactions, budgets, goals, and rules? Export an encrypted backup first if you want a recovery copy.</string>
+    <string name="clear_all_type_confirm">Type DELETE to confirm</string>
+
+    <!-- Google Drive Backup -->
+    <string name="drive_backup_title">Google Account &amp; Drive Backup</string>
+    <string name="drive_authorized_title">Google Drive Connected (Hisab Nikash Backups)</string>
+    <string name="drive_not_connected_title">Google Drive Not Connected</string>
+    <string name="drive_not_connected_desc">Optional cloud backup stores encrypted .hnkb snapshots in a visible \"Hisab Nikash Backups\" folder in your Google Drive. Tap below to sign in and grant permission.</string>
+    <string name="drive_play_services_unavailable">Google Play Services Unavailable</string>
+    <string name="drive_consent_cancelled_title">Google Drive Authorization Cancelled</string>
+    <string name="drive_consent_cancelled_desc">Google Drive consent was cancelled or could not be completed. Make sure a Google account is signed in on this device, network is online, and the Android OAuth 2.0 Client ID + signing SHA-1 for %1$s is configured in Google Cloud Console. You can still use Manual Encrypted Backup (.hnkb) 100% offline.</string>
+    <string name="drive_setup_required_title">OAuth Setup Required</string>
+    <string name="drive_unregistered_summary">This app build is not yet registered in Google Cloud Console for Google Drive OAuth. Register the Package Name and Signing SHA-1 below as an Android OAuth 2.0 Client ID, enable the Google Drive API, and add your Google account under OAuth Consent Screen Test Users.</string>
+    <string name="drive_package_name_label">Package Name</string>
+    <string name="drive_sha1_label">Signing SHA-1</string>
+    <string name="drive_copy_oauth_details">Copy Package &amp; SHA-1</string>
+    <string name="drive_copied_oauth_details">Copied package name and SHA-1 fingerprint</string>
+    <string name="drive_offline_fallback_hint">Tip: Manual Encrypted Backup (.hnkb) works 100% offline right now without Google Cloud Console setup.</string>
+    <string name="drive_setup_required_desc">Google Drive backup uses Google Identity Services AuthorizationClient and Drive REST v3 to save backups in the \"Hisab Nikash Backups\" folder on a Play-Services device after configuring your OAuth 2.0 Android client ID and signing SHA-1 in Google Cloud Console.</string>
+    <string name="drive_auto_backup_toggle">Automatic Daily Encrypted Drive Backup</string>
+    <string name="drive_remember_key_toggle">Remember derived backup key on this device</string>
+    <string name="drive_remember_key_warning">Allows unattended WorkManager uploads using an Android Keystore-wrapped key. This local convenience key does not survive app reinstall or device loss—you still need your passphrase to restore on another phone.</string>
+    <string name="drive_backup_now">Back Up to Drive Now</string>
+    <string name="drive_restore">Restore from Drive</string>
+    <string name="drive_connect">Authorize Google Drive</string>
+    <string name="drive_retry_connect">Retry Authorization</string>
+    <string name="drive_disconnect">Disconnect Account</string>
+    <string name="drive_remote_backups_title">Backups in \"Hisab Nikash Backups\"</string>
+
+    <!-- About -->
+    <string name="about_title">About হিসাবনিকাশ</string>
+
+    <!-- Notifications -->
+    <string name="channel_budget_name">Budget Alerts</string>
+    <string name="channel_budget_desc">Alerts when spending reaches 50%, 80%, or 100% of a monthly budget</string>
+    <string name="channel_recurring_name">Recurring Reminders</string>
+    <string name="channel_recurring_desc">Reminders for due recurring income or bills</string>
+    <string name="channel_backup_name">Backup Status</string>
+    <string name="channel_backup_desc">Completion and error alerts for encrypted backups</string>
+
+    <!-- Errors -->
+    <string name="err_invalid_amount">Enter a valid BDT amount (up to 2 decimal places)</string>
+    <string name="err_same_account">Source and destination accounts must be different</string>
+    <string name="err_insufficient_unreserved">Exceeds unreserved available balance in this account</string>
+    <string name="err_passphrase_short">Passphrase must be at least 8 characters</string>
+    <string name="err_passphrase_mismatch">Passphrases do not match</string>
+</resources>

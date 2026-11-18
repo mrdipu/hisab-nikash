@@ -1,0 +1,6 @@
+{
+  "name": "হিসাবনিকাশ",
+  "description": "আপনার আয়, ব্যয়, বাজেট, অ্যাকাউন্ট ও সঞ্চয়ের সম্পূর্ণ হিসাব রাখুন এক জায়গায়। অফলাইনেই নিরাপদে পরিচালনা করুন আপনার ব্যক্তিগত অর্থ—হিসাবনিকাশের মাধ্যমে। হিসাবনিকাশ — Powered by DZ Ai-STUDIO. Offline-first, bilingual (বাংলা & English) personal finance app for Bangladesh (BDT ৳) with multi-account ledgers, transfers, monthly budgets, earmarked savings goals, recurring bills, CSV/PDF reports, biometric app lock, and AES-256-GCM encrypted local & optional Google Drive backups.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
